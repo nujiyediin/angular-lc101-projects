@@ -1,0 +1,15 @@
+.chores {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 40px;
+    color: brown;
+
+}
+
+h3{
+    text-decoration: underline;
+
+}
+
+li {
+    font-style: italic;
+}
