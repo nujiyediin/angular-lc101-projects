@@ -4,5 +4,16 @@
        <li *ngFor ="let movie of movies">{{movie}}</li>
     </ol>
     <hr>
-
+    <input  #newMovie (keyup.enter) = 'addMovie(newMovie.value); newMovie.value=""' type='text' placeholder="Enter Movie Title Here"/>
+    <button (click)="addMovie(newMovie.value); newMovie.value=''">Add</button>
+    <div *ngIf = "newMovie.value !==''; else emptyAlert"></div>
+   <div class="alert" *ngIf = "newMovie.value !== movies[0]; else sameAlert"></div>
  </div>
+
+ <ng-template #emptyAlert>
+    <p class="alert">You must submit a title.</p>
+ </ng-template>
+
+ <ng-template #sameAlert>
+    <p class="alert">You cannot enter the same movie twice.</p>
+ </ng-template>
